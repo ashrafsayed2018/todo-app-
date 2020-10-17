@@ -26,7 +26,12 @@ export default {
                 completed : false
             }
             // send up to the parent
-            this.$emit('add-todo',newTodo)
+            if(this.title.length > 3) {
+                this.$emit('add-todo',newTodo)
+            } else {
+                alert('please fill in todo more than 3 characters ....')
+            }
+          
             this.title = ''
         }
     }
